@@ -1,0 +1,15 @@
+
+<svg width="30.9" height="41" xmlns="http://www.w3.org/2000/svg">
+ <style type="text/css">.st0{fill-rule:evenodd;clip-rule:evenodd;}</style>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="43" width="32.9" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_1">
+   <polygon stroke="null" fill="#ffffff" id="svg_2" points="29.90000145308477,20.939999531954527 0,41.879999063909054 0,0 29.90000145308477,20.939999531954527 " class="st0"/>
+  </g>
+ </g>
+</svg>
