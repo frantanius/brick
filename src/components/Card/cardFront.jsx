@@ -90,13 +90,12 @@ const ArrowRightWrapper = styled.div`
   width: 5%;
 `
 
-export default function CardFrontComponent({ 
-  cardType, 
-  number, 
-  name, 
-  expiration 
+export default function CardFrontComponent({
+  cardType,
+  number,
+  name,
+  expiration,
 }) {
-  
   const imgUrl = `${process.env.PUBLIC_URL}/images`
   return (
     <CardFront>
@@ -110,7 +109,7 @@ export default function CardFrontComponent({
               <Image src={`${imgUrl}/master.svg`} alt="master-card" />
             ) : cardType === 'VISA' ? (
               <Image src={`${imgUrl}/visa.svg`} alt="master-card" />
-            ) : null }
+            ) : null}
           </CardLogo>
         </SectionTop>
         <SectionMiddle>

@@ -11,11 +11,11 @@ import Column from 'components/Column'
 import Row from 'components/Row'
 import Spacing from 'components/Spacing'
 // Utils
-import { 
-  expiryFormat, 
-  numberOnly, 
-  creditCardFormat, 
-  creditCardType, 
+import {
+  expiryFormat,
+  numberOnly,
+  creditCardFormat,
+  creditCardType,
   ccGenerator,
 } from 'utils/cardFormat'
 
@@ -25,7 +25,7 @@ export default function CreditCard() {
     cardNumber: '',
     expiration: '',
     securityCode: '',
-    cardType: ''
+    cardType: '',
   })
   const [isFlipped, setIsFlipped] = useState(false)
 
@@ -38,13 +38,13 @@ export default function CreditCard() {
     switch (name) {
       case 'name':
         formattedValue = value
-        break;
+        break
       case 'cardNumber':
         formattedValue = creditCardFormat(value)
 
         setForm((prevState) => ({
           ...prevState,
-          cardType: creditCardType(value)
+          cardType: creditCardType(value),
         }))
         break
       case 'expiration':
@@ -55,12 +55,12 @@ export default function CreditCard() {
         break
       default:
         formattedValue = value
-        break;
+        break
     }
 
     setForm((prevState) => ({
       ...prevState,
-      [name]: formattedValue
+      [name]: formattedValue,
     }))
   }
 
@@ -89,11 +89,13 @@ export default function CreditCard() {
 
   useEffect(() => {
     const inputs = document.querySelectorAll('input')
-    inputs.forEach((element) => element.addEventListener('click' , handleFlipped))
-    // cleanup 
+    inputs.forEach((element) =>
+      element.addEventListener('click', handleFlipped),
+    )
+    // cleanup
     return () => {
-      inputs.forEach((element) => 
-        element.removeEventListener('click', handleFlipped)
+      inputs.forEach((element) =>
+        element.removeEventListener('click', handleFlipped),
       )
     }
   }, [])
@@ -103,7 +105,7 @@ export default function CreditCard() {
       <Container>
         <Row gap="2rem">
           <Column>
-            <Card 
+            <Card
               name={name}
               number={cardNumber}
               expiration={expiration}
@@ -115,21 +117,17 @@ export default function CreditCard() {
           <Column>
             <Spacing bottom="1rem">
               <Label htmlFor="name">Name</Label>
-              <Input 
-                id="name" 
-                name="name" 
-                onChange={handleChange} 
-              />
+              <Input id="name" name="name" onChange={handleChange} />
             </Spacing>
             <Spacing bottom="1rem">
               <Label htmlFor="cardNumber">
                 Card Number
                 <Badge onClick={handleGeneratorCC}>generate random</Badge>
               </Label>
-              <Input 
-                id="cardNumber" 
-                name="cardNumber" 
-                placeholder="xxxx xxxx xxxx xxxx" 
+              <Input
+                id="cardNumber"
+                name="cardNumber"
+                placeholder="xxxx xxxx xxxx xxxx"
                 maxLength="19"
                 value={cardNumber}
                 onChange={handleChange}
@@ -138,23 +136,23 @@ export default function CreditCard() {
             <Row>
               <Column>
                 <Label htmlFor="expiration">Expiration (mm/yy)</Label>
-                <Input 
-                  id="expiration" 
-                  name="expiration" 
-                  placeholder="mm/yy" 
+                <Input
+                  id="expiration"
+                  name="expiration"
+                  placeholder="mm/yy"
                   maxLength="5"
                   value={expiration}
-                  onChange={handleChange} 
+                  onChange={handleChange}
                 />
               </Column>
               <Column>
                 <Label htmlFor="securityCode">Security Code</Label>
-                <Input 
-                  id="securityCode" 
-                  name="securityCode" 
+                <Input
+                  id="securityCode"
+                  name="securityCode"
                   maxLength="3"
                   value={securityCode}
-                  onChange={handleChange} 
+                  onChange={handleChange}
                 />
               </Column>
             </Row>

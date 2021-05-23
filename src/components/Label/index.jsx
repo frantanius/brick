@@ -7,15 +7,10 @@ const LabelStyle = styled.label`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 `
 
-export default function Label({ 
-  htmlFor, 
-  className, 
-  children, 
-  ...restProps 
-}) {
+export default function Label({ htmlFor, className, children, ...restProps }) {
   return (
     <LabelStyle htmlFor={htmlFor} className={className} {...restProps}>
       {children}
@@ -26,7 +21,7 @@ export default function Label({
 Label.protoType = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]).isRequired,
   className: PropTypes.string,
   htmlFor: PropTypes.string.isRequired,

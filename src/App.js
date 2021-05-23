@@ -4,4 +4,4 @@ function App() {
   return <CreditCardPage />
 }
 
-export default App;
+export default App

@@ -1,4 +1,3 @@
-
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import CardFront from './cardFront'
@@ -13,19 +12,16 @@ const Card = styled.div`
   border-radius: 1.5rem;
   color: #ffffff;
   position: relative;
-  transition: all .4s linear;
+  transition: all 0.4s linear;
   transform-style: preserve-3d;
   width: 100%;
   height: 100%;
-  background: ${({ type }) => 
-    type === 'VISA' ? (
-        'linear-gradient(25deg, #0f509e, #1399cd)'
-      ) : type === 'MASTERCARD' ? (
-        'linear-gradient(25deg,#f37b26, #fdb731)'
-      ) : (
-        'linear-gradient(25deg, #999, #999)'
-      )
-  };
+  background: ${({ type }) =>
+    type === 'VISA'
+      ? 'linear-gradient(25deg, #0f509e, #1399cd)'
+      : type === 'MASTERCARD'
+      ? 'linear-gradient(25deg,#f37b26, #fdb731)'
+      : 'linear-gradient(25deg, #999, #999)'};
   transform: ${({ isFlipped }) => isFlipped && 'rotateY(180deg)'};
 `
 
@@ -37,15 +33,12 @@ export default function CreditCard(props) {
     securityCode,
     cardType = 'unknown',
     isFlipped,
-  } = props  
+  } = props
 
   return (
     <CardWrapper>
-      <Card 
-        isFlipped={isFlipped} 
-        type={cardType}
-      >
-        <CardFront  
+      <Card isFlipped={isFlipped} type={cardType}>
+        <CardFront
           id="front"
           name={name}
           number={number}

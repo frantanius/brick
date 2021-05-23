@@ -36,7 +36,12 @@ const Stripe = styled.div`
 `
 const Signature = styled.div`
   background: repeating-linear-gradient(
-    .1deg,#fff 20%,#fff 40%,#fea 0,#fea 44%,#fff 0
+    0.1deg,
+    #fff 20%,
+    #fff 40%,
+    #fea 0,
+    #fea 44%,
+    #fff 0
   );
   height: 18%;
   left: 5%;
@@ -51,9 +56,7 @@ export default function CardBackComponent({ securityCode }) {
       <Stripe />
       <PositionRelative id="relative">
         <Signature>
-          <CardSecurityCode>
-            {securityCode}
-          </CardSecurityCode>
+          <CardSecurityCode>{securityCode}</CardSecurityCode>
         </Signature>
       </PositionRelative>
     </CardBack>

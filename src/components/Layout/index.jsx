@@ -12,16 +12,12 @@ const Background = styled.div`
 `
 
 export default function Layout({ children }) {
-  return (
-    <Background>
-      {children}
-    </Background>
-  )
+  return <Background>{children}</Background>
 }
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]).isRequired,
 }

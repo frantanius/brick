@@ -10,7 +10,7 @@ const InputStyle = styled.input`
   font-size: 20px;
   outline: none;
   padding: 10px;
-  transition: all .4s;
+  transition: all 0.4s;
   width: 100%;
   margin: 0;
   &:focus {
@@ -18,28 +18,28 @@ const InputStyle = styled.input`
   }
 `
 
-export default function Input({ 
-  type = 'text', 
+export default function Input({
+  type = 'text',
   name,
   id,
-  className, 
-  placeholder, 
+  className,
+  placeholder,
   value,
-  onChange, 
+  onChange,
   onBlur,
   autoFocus = false,
   disabled = false,
-  ...restProps 
+  ...restProps
 }) {
   return (
-    <InputStyle 
-      type={type} 
+    <InputStyle
+      type={type}
       name={name}
       id={id}
-      className={className} 
+      className={className}
       placeholder={placeholder}
       value={value}
-      onChange={onChange} 
+      onChange={onChange}
       onBlur={onBlur}
       autoFocus={autoFocus}
       disabled={disabled}
@@ -49,16 +49,13 @@ export default function Input({
 }
 
 Input.propTypes = {
-  type: PropTypes.oneOf([ 'tel', 'text']),
+  type: PropTypes.oneOf(['tel', 'text']),
   name: PropTypes.string,
   id: PropTypes.string,
-  className: PropTypes.string, 
-  placeholder: PropTypes.string, 
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
-  onChange: PropTypes.func, 
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  onChange: PropTypes.func,
   onBlur: PropTypes.func,
   autoFocus: PropTypes.bool,
   disabled: PropTypes.bool,

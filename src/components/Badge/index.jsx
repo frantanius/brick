@@ -13,25 +13,20 @@ const BadgeStyle = styled.button`
   cursor: pointer;
   user-select: none;
   border: 1px solid #6c757d;
-  padding: .3rem;
+  padding: 0.3rem;
   font-size: 0.7rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 `
 
-export default function Badge({ 
-  onClick, 
-  className, 
-  id, 
+export default function Badge({
+  onClick,
+  className,
+  id,
   children,
-  ...restProps 
+  ...restProps
 }) {
   return (
-    <BadgeStyle 
-      id={id} 
-      className={className} 
-      onClick={onClick} 
-      {...restProps}
-    >
+    <BadgeStyle id={id} className={className} onClick={onClick} {...restProps}>
       {children}
     </BadgeStyle>
   )
@@ -39,10 +34,10 @@ export default function Badge({
 
 Badge.propTypes = {
   id: PropTypes.string,
-  className: PropTypes.string, 
-  onClick: PropTypes.func, 
+  className: PropTypes.string,
+  onClick: PropTypes.func,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
+    PropTypes.node,
   ]).isRequired,
 }
