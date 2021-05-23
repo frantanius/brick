@@ -97,7 +97,7 @@ export default function CreditCard() {
   }, [])
 
   return (
-    <Layout title="Credit Card">
+    <Layout title="Credit Card" footer="Assesment2" footerLink="/assesment2">
       <Container>
         <Row gap="2rem">
           <Card

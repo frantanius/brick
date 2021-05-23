@@ -1,7 +1,7 @@
-import CreditCardPage from 'pages/CreditCard'
+import Routes from 'routes'
 
 function App() {
-  return <CreditCardPage />
+  return <Routes />
 }
 
 export default App

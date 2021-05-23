@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
@@ -20,18 +21,27 @@ const TitlePage = styled.h1`
     z-index: 5;
   }
 `
+const Footer = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  bottom: 10%;
+`
 
-export default function Layout({ title, children }) {
+export default function Layout({ title, footer, footerLink = '/', children }) {
   return (
     <Background>
       <TitlePage>{title}</TitlePage>
       {children}
+      <Footer to={footerLink}>{footer}</Footer>
     </Background>
   )
 }
 
 Layout.propTypes = {
   title: PropTypes.string,
+  footer: PropTypes.string,
+  footerLink: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
