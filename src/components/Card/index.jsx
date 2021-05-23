@@ -1,11 +1,19 @@
+// Packages
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+// Components
+import Column from 'components/Column'
 import CardFront from './cardFront'
 import CardBack from './cardBack'
 
 const CardWrapper = styled.div`
   perspective: 1000px;
   height: 16rem;
+
+  @media screen and (max-width: 600px) {
+    padding-top: 3.5rem;
+    padding-bottom: 1rem;
+  }
 `
 
 const Card = styled.div`
@@ -36,18 +44,20 @@ export default function CreditCard(props) {
   } = props
 
   return (
-    <CardWrapper>
-      <Card isFlipped={isFlipped} type={cardType}>
-        <CardFront
-          id="front"
-          name={name}
-          number={number}
-          expiration={expiration}
-          cardType={cardType}
-        />
-        <CardBack securityCode={securityCode} />
-      </Card>
-    </CardWrapper>
+    <Column>
+      <CardWrapper>
+        <Card isFlipped={isFlipped} type={cardType}>
+          <CardFront
+            id="front"
+            name={name}
+            number={number}
+            expiration={expiration}
+            cardType={cardType}
+          />
+          <CardBack securityCode={securityCode} />
+        </Card>
+      </CardWrapper>
+    </Column>
   )
 }
 

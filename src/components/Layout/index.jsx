@@ -10,12 +10,28 @@ const Background = styled.div`
   width: 100vw;
   height: 100vh;
 `
+const TitlePage = styled.h1`
+  position: absolute;
+  top: 5%;
 
-export default function Layout({ children }) {
-  return <Background>{children}</Background>
+  @media screen and (max-width: 600px) {
+    font-size: 1.5rem;
+    top: 0;
+    z-index: 5;
+  }
+`
+
+export default function Layout({ title, children }) {
+  return (
+    <Background>
+      <TitlePage>{title}</TitlePage>
+      {children}
+    </Background>
+  )
 }
 
 Layout.propTypes = {
+  title: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

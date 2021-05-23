@@ -62,16 +62,32 @@ const CardNumber = styled.div`
   font-size: 1.8rem;
   letter-spacing: 3px;
   font-weight: 700;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1.1rem;
+  }
 `
 
 const CardName = styled.div`
   font-weight: 500;
   text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 65%;
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.8rem;
+  }
 `
 const CardExpiration = styled.div`
   font-weight: 500;
   letter-spacing: 3px;
   width: 24%;
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.5rem;
+    letter-spacing: 0;
+  }
 `
 const ExpirationWrapper = styled.div`
   display: flex;
